@@ -6,7 +6,7 @@
     <!-- H2 Database -->
     <Resource id="CompanyDataSource" type="DataSource">
         JdbcDriver = org.h2.Driver
-        JdbcUrl = jdbc:h2:~/h2database/CompanyDB;AUTO_SERVER=TRUE;
+        JdbcUrl = jdbc:h2:file:D:/h2/CompanyDB;AUTO_SERVER=TRUE;
         UserName = as
         Password = as
         InitialSize = 1
