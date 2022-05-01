@@ -5,12 +5,15 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "WORKER")
+@Table(name = "WORKERS")
 @Getter @Setter
-public class Worker {
+public class Worker implements Serializable {
 
     public Worker() {}
 
@@ -38,6 +41,10 @@ public class Worker {
 
     @Column(name = "PERSONAL_ID", nullable = false)
     private String personalId;
+
+    @ManyToMany
+    @JoinTable(name = "WORKER_TASK")
+    private List<Task> tasks = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "COMPANY_ID")

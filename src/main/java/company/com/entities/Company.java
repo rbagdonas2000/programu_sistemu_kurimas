@@ -1,17 +1,15 @@
 package company.com.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Table(name = "COMPANY")
+@Table(name = "COMPANIES")
 @Getter @Setter
 public class Company {
 
