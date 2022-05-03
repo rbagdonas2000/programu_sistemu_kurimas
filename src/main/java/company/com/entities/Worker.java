@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@NamedQueries({
+        @NamedQuery(name = "Worker.getAll", query = "select w from Worker as w")/*,
+        @NamedQuery(name = "Worker.getByCompanyId", query = "SELECT w FROM Worker as w WHERE w.company = :compId")*/
+})
 @Entity
 @Table(name = "WORKERS")
 @Getter @Setter

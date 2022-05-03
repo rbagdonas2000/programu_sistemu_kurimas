@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@NamedQueries({
+        @NamedQuery(name = "Company.getAll", query = "select c from Company as c")
+})
 @Entity
 @Table(name = "COMPANIES")
 @Getter @Setter
