@@ -15,10 +15,12 @@
             <li>#{company.name}</li>
                 <ol>
                     <ui:repeat value="#{company.workers}" var="worker">
-                        <li>#{worker.firstName} #{worker.lastName}</li>
+                        <li><a href="worker.xhtml?workerId=#{worker.id}">#{worker.firstName} #{worker.lastName}</a></li>
                     </ui:repeat>
                 </ol>
             <br/>
+            <a href="addWorker.xhtml?companyId=#{company.id}">Add new worker</a>
+            <br/><br/>
         </ui:repeat>
     </ul>
     <br/>
@@ -28,5 +30,7 @@
         <h:inputText a:placeholder="Company name" value="#{companiesService.companyToCreate.name}" required="true"/>
         <h:commandButton value="Submit" actionListener="#{companiesService.createCompany}" action="index?faces-redirect=true"/>
     </h:form>
+
+    <a href="myBatis/companies.xhtml">MyBatis impl</a>
 </h:body>
 </html>

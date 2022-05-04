@@ -7,6 +7,7 @@ import org.mybatis.cdi.SessionFactoryProvider;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
+
 import java.io.IOException;
 
 @ApplicationScoped

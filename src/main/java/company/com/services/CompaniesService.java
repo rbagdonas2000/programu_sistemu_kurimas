@@ -4,8 +4,7 @@ import company.com.entities.Company;
 import company.com.persistence.CompaniesDAO;
 import lombok.Getter;
 import lombok.Setter;
-import org.mybatis.cdi.Transactional;
-
+import javax.transaction.Transactional;
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
@@ -34,8 +33,6 @@ public class CompaniesService {
 
     @Transactional
     public void createCompany(){
-        System.out.println("Atejom i createCompany");
-        System.out.println(companyToCreate.getName());
         companiesDAO.persist(companyToCreate);
     }
 }

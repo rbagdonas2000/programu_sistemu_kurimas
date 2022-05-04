@@ -1,0 +1,36 @@
+<!--
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+>
+<h:head>
+    <title>Company</title>
+</h:head>
+<h:body>
+    <h1>Companies and their workers</h1>
+    <ul>
+        <ui:repeat value="#{companiesMyBatisService.allCompanies}" var="company">
+            <li>#{company.name}</li>
+        &lt;!&ndash;    <ol>
+                <ui:repeat value="#{companiesMyBatisService.loadCompanyWorkers(company.id)}" var="worker">
+                    <li>#{worker.firstName} #{worker.lastName}</li>
+                </ui:repeat>
+            </ol>&ndash;&gt;
+        </ui:repeat>
+    </ul>
+    <br/>
+
+
+&lt;!&ndash;    <h2>Create new company:</h2>
+    <h:form>
+        <h:inputText a:placeholder="Company name" value="#{companiesMyBatisService.newCompany.name}" required="true"/>
+        <h:commandButton value="Submit" action="#{companiesMyBatisService.createCompany}"/>
+    </h:form>&ndash;&gt;
+
+    <h:link value="Back to index" outcome="/index"/>
+</h:body>
+</html>
+-->

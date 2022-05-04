@@ -46,4 +46,6 @@ public interface WorkersMapper {
      * @mbg.generated Tue Apr 26 21:32:44 EEST 2022
      */
     int updateByPrimaryKey(Workers record);
+
+    //List<Workers> getByCompanyId(Integer id);
 }

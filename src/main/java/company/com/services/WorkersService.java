@@ -16,9 +16,6 @@ public class WorkersService {
     @Inject
     private WorkersDAO workersDAO;
 
-    @Getter @Setter
-    private Worker workerToCreate = new Worker();
-
     @Getter
     private List<Worker> allWorkers;
 
@@ -31,7 +28,4 @@ public class WorkersService {
         this.allWorkers = workersDAO.getAll();
     }
 
-    /*public List getByCompanyId(Integer id){
-        return workersDAO.getByCompanyId(id);
-    }*/
 }

@@ -19,17 +19,15 @@ public class WorkersDAO {
         return em.createNamedQuery("Worker.getAll", Worker.class).getResultList();
     }
 
-    /*public List getByCompanyId(Integer companyId){
-        return em.createQuery("SELECT w FROM Worker as w WHERE w.company = :compId")
-                .setParameter("compId", companyId)
-                .getResultList();
-    }*/
-
     public void persist(Worker worker){
         this.em.persist(worker);
     }
 
     public Worker getOne(Integer id){
         return em.find(Worker.class, id);
+    }
+
+    public void update(Worker worker){
+        em.merge(worker);
     }
 }
