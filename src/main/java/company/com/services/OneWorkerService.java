@@ -4,7 +4,7 @@ import company.com.entities.Worker;
 import company.com.persistence.WorkersDAO;
 import lombok.Getter;
 import lombok.Setter;
-import org.h2.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -13,7 +13,6 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Map;
-import java.util.Objects;
 
 @Model
 public class OneWorkerService implements Serializable {
@@ -38,7 +37,7 @@ public class OneWorkerService implements Serializable {
     @Transactional
     public void update(){
         String role = workerToUpdate.getRole();
-        if(StringUtils.isNullOrEmpty(role) || StringUtils.isWhitespaceOrEmpty(role))
+        if(StringUtils.isWhitespace(role) || StringUtils.isNoneBlank(role))
             workerToUpdate.setRole(worker.getRole());
 
         workersDAO.update(workerToUpdate);

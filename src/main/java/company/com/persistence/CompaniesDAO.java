@@ -26,4 +26,12 @@ public class CompaniesDAO {
     public Company getOne(Integer id){
         return em.find(Company.class, id);
     }
+
+    public Company getByName(String name){
+        return (Company) em.createQuery(
+                "SELECT c FROM Company as c "+
+                        "WHERE c.name LIKE :paramName")
+                .setParameter("paramName", name)
+                .getSingleResult();
+    }
 }
